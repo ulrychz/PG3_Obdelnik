@@ -1,0 +1,17 @@
+﻿<h3>Reprezentace obdélníku</h3>
+
+<svg width="100%" height="auto" viewBox="0 0 @(MaxRozmer + 2) @(MaxRozmer + 2)"
+	xmlns="http://www.w3.org/2000/svg">
+	<rect width="@Delka" height="@Sirka" x="1" y="1" style="fill:rgb(0,0,255);stroke-width:3;stroke:red" />
+</svg>
+
+@code {
+	[Parameter]
+	public int Delka { get; set; }
+
+	[Parameter]
+	public int Sirka { get; set; }
+	
+	[Parameter]
+	public int MaxRozmer { get; set; }
+}

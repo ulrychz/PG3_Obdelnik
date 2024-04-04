@@ -1,0 +1,29 @@
+﻿@page "/obdelnik"
+
+<PageTitle>Obdelník</PageTitle>
+
+<h2>Obdelník</h2>
+
+<div  class="border p-2">
+	<label>Maximální rozměr: <input type="number" @bind-value="obdelnik.MaxRozmer"></label>
+	<br />
+	<label>Strana A: <input type="number" @bind-value="obdelnik.StranaA"></label>
+	<label>Strana B: <input type="number" @bind-value="obdelnik.StranaB"></label>
+</div>
+
+<div class="border p-2 mt-3">
+	<label>Obsah: <input  value="@obdelnik.Obsah.ToString("N0")" disabled></label>
+	<br />
+	<label>Obvod: <input value="@obdelnik.Obvod.ToString("N0")" disabled></label>
+	<br />
+	<label>Uhlopříčka: <input value="@obdelnik.Uhlopricka.ToString("N")" disabled></label>
+</div>
+
+<div class="mt-3">
+	<Rectangle Delka="@obdelnik.StranaA" Sirka="@obdelnik.StranaB" MaxRozmer="@obdelnik.MaxRozmer"/>
+	
+</div>
+
+@code {
+	private Models.Obdelnik obdelnik = new Models.Obdelnik();
+}
